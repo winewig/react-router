@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 import { getInvoices } from "../data";
+import "./invoices.css";
 
 export default function Invoices() {
   let invoices = getInvoices();
@@ -8,12 +9,7 @@ export default function Invoices() {
 
   return (
     <div style={{ display: "flex" }}>
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          padding: "1rem",
-        }}
-      >
+      <nav className="nav-container">
         <input
           value={searchParams.get("filter") || ""}
           onChange={(event) => {
